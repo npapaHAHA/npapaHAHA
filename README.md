@@ -1,4 +1,4 @@
-### Hey there, I'm Nikita 👋
+### Hey there, I'm Egor 👋
 
 🎓 First-year CS student at [ITMO University](https://en.itmo.ru/en/)  
 💡 Passionate about tech, coding, and solving interesting problems  
