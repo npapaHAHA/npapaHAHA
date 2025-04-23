@@ -4,7 +4,7 @@
 💡 Passionate about tech, coding, and solving interesting problems  
 🔭 Currently learning: Python, C++, Web development  
 ⚙️ Interested in: software engineering, backend development, and open-source  
-🎯 2025 Goal: Build a solid portfolio and get a cool internship
+🎯 2025 Goaal: Build a solid portfolio and get a cool internship
 
 ---
 
