@@ -25,6 +25,10 @@
 ![Статистика GitHub](https://github-readme-stats.vercel.app/api?username=npapaHAHA&show_icons=true&theme=radical)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=npapaHAHA&layout=compact&theme=radical)
 
+<!--STATS_START-->
+(статистика будет здесь)
+<!--STATS_END-->
+
 ---
 
 ### 📫 Contact Me
