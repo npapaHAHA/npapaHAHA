@@ -36,6 +36,6 @@ jobs:
 
           git add README.md
           git commit -m "🔄 update stats" || echo "No changes"
-          git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
+          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
 
           
