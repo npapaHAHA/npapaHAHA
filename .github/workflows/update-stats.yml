@@ -38,3 +38,4 @@ jobs:
           git commit -m "🔄 update stats" || echo "No changes"
           git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
 
+          
