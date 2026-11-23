@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a1010">
+  <meta name="description" content="Интерактивная сцена на основе SlotGuard и Edge Rollout Lab. Перемотайте события, сравните планы и откройте код, который определяет исход.">
+  <title>14:03 · Окно обслуживания</title>
+  <link rel="preload" as="image" href="assets/field.webp">
+  <link rel="stylesheet" href="scene.css">
+  <script type="module" src="scene.mjs"></script>
+</head>
+<body>
+  <header class="page-header content">
+    <a class="brand" href="https://github.com/npapaHAHA">ЕГОР <span>/ npapaHAHA</span></a>
+    <a class="top-link" href="https://github.com/npapaHAHA">Профиль GitHub</a>
+  </header>
+
+  <main id="experience" class="content">
+    <section class="film" aria-label="Окно обслуживания">
+      <div id="stage" class="stage" data-phase="opening">
+        <div class="feeds" id="feeds">
+          <article class="feed" id="feed-a" aria-label="Исходный план FIFO">
+            <div class="camera">
+              <img class="landscape" src="assets/field.webp" width="1672" height="941" alt="Миниатюра пяти промышленных площадок на побережье в сумерках" fetchpriority="high">
+              <div class="markers" data-markers hidden></div>
+            </div>
+            <div class="feed-shade" aria-hidden="true"></div>
+            <div class="feed-label" data-feed-label hidden><b>Исходный план</b><span>FIFO</span></div>
+            <div class="feed-data" data-feed-data hidden>
+              <span><strong data-devices>0</strong> / 180 устройств</span>
+              <span><strong data-traffic>0</strong> МБ</span>
+              <span><strong data-utility>0</strong> полезность</span>
+            </div>
+          </article>
+          <article class="feed" id="feed-b" aria-label="Альтернативный план" hidden>
+            <div class="camera">
+              <img class="landscape" src="assets/field.webp" width="1672" height="941" alt="">
+              <div class="markers" data-markers></div>
+            </div>
+            <div class="feed-shade" aria-hidden="true"></div>
+            <div class="feed-label" data-feed-label><b>Твой план</b><span id="variant-name">С учётом канала</span></div>
+            <div class="feed-data" data-feed-data>
+              <span><strong data-devices>0</strong> / 180 устройств</span>
+              <span><strong data-traffic>0</strong> МБ</span>
+              <span><strong data-utility>0</strong> полезность</span>
+            </div>
+          </article>
+        </div>
+
+        <div id="opening" class="opening">
+          <h1><span>14:03</span>Окно обслуживания</h1>
+          <p>Два запроса на последний слот. Пять площадок ждут обновления.</p>
+          <div class="opening-actions">
+            <button id="start" class="button primary" type="button">Войти в сцену</button>
+            <span>1 минута · синтетический сценарий</span>
+          </div>
+          <p id="load-error" class="load-error" role="alert" hidden></p>
+        </div>
+
+        <div id="scene-caption" class="scene-caption" hidden>
+          <div class="time-chip" id="scene-time">14:03:00</div>
+          <h2 id="chapter-title">До закрытия окна — 60 секунд</h2>
+          <p id="chapter-caption">Пять площадок ждут выпуск модели.</p>
+        </div>
+
+        <div id="booking-stream" class="booking-stream" hidden>
+          <div class="booking-signals" aria-hidden="true">
+            <span>Оператор A <b id="request-a">Отправка</b></span>
+            <span>Оператор B <b id="request-b">Отправка</b></span>
+          </div>
+          <button id="booking-hotspot" class="booking-hotspot" type="button">
+            <span class="hotspot-pulse" aria-hidden="true"></span>
+            Разобрать бронь
+          </button>
+        </div>
+      </div>
+
+      <section class="console" id="console" aria-label="Управление сценой" hidden>
+        <div class="transport">
+          <button class="button transport-button" id="play" type="button" aria-label="Пауза">
+            <span class="play-icon" aria-hidden="true"></span><span id="play-label">Пауза</span>
+          </button>
+          <span class="transport-time" id="transport-time">00:00 / 01:00</span>
+          <label class="sr-only" for="timeline">Позиция в сцене</label>
+          <input id="timeline" type="range" min="0" max="60" step="0.1" value="0" aria-valuetext="0 секунд из 60">
+          <button class="button secondary share" id="share" type="button">Скопировать ссылку</button>
+        </div>
+        <nav id="chapters" class="chapters" aria-label="Ключевые моменты"></nav>
+        <div class="plan-controls" id="plan-controls" hidden>
+          <label for="plan">План для сравнения</label>
+          <select id="plan">
+            <option value="bandwidth">С учётом канала</option>
+            <option value="gain">Сначала прирост</option>
+          </select>
+          <label for="budget">Лимит сети</label>
+          <select id="budget">
+            <option value="70">70 МБ в день</option>
+            <option value="115" selected>115 МБ в день</option>
+            <option value="170">170 МБ в день</option>
+          </select>
+          <button id="compare" class="button secondary" type="button" aria-pressed="false">Сравнить планы</button>
+          <div class="simulation-day" id="simulation-day">День 0 / 36</div>
+        </div>
+        <p id="share-result" class="copy-status" role="status" hidden></p>
+        <input id="share-url" class="share-url" aria-label="Ссылка на этот момент" readonly hidden>
+      </section>
+    </section>
+
+    <section id="inspector" class="inspector" aria-labelledby="inspector-title" hidden>
+      <div class="inspector-copy">
+        <div class="eyebrow" id="inspector-project">SlotGuard / ASP.NET Core</div>
+        <h2 id="inspector-title">Один слот, два запроса</h2>
+        <p id="inspector-description"></p>
+        <a id="inspector-source" class="source" href="https://github.com/npapaHAHA/SlotGuard" target="_blank" rel="noopener">Открыть код на GitHub</a>
+      </div>
+      <div class="trace" id="trace" role="list" aria-label="События"></div>
+      <button id="close-inspector" class="button secondary close-inspector" type="button" aria-label="Свернуть разбор">Свернуть</button>
+    </section>
+
+    <section class="source-strip" aria-label="Проекты и данные">
+      <p>Сцена связывает два независимых проекта. Бронирование показано по интеграционному тесту. Раскатка использует воспроизводимые прогоны на синтетическом парке.</p>
+      <div><a href="https://github.com/npapaHAHA/SlotGuard">SlotGuard</a><a href="https://github.com/npapaHAHA/edge-rollout-lab">Edge Rollout Lab</a></div>
+    </section>
+  </main>
+</body>
+</html>
