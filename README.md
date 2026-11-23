@@ -1,11 +1,12 @@
-<p align="center">
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/npapaHAHA/npapaHAHA/main/assets/profile/masthead-dark.png">
-    <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/npapaHAHA/npapaHAHA/main/assets/profile/masthead-light.png">
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/npapaHAHA/npapaHAHA/main/assets/profile/masthead-dark.gif">
-    <img src="https://raw.githubusercontent.com/npapaHAHA/npapaHAHA/main/assets/profile/masthead-light.gif" width="100%" alt="Егор. ИТМО. Прикладной ML и бэкенд на Python, .NET и PostgreSQL. Схема Edge Rollout Lab показывает 180 устройств на пяти площадках.">
-  </picture>
-</p>
+# 14:03 · Окно обслуживания
+
+[![Первый кадр. Пять промышленных площадок на побережье ждут обновления модели.](https://raw.githubusercontent.com/npapaHAHA/npapaHAHA/main/docs/assets/field.webp)](https://npapahaha.github.io/npapaHAHA/)
+
+Два запроса на последний слот. Пять площадок ждут обновления.
+
+**[Войти в сцену](https://npapahaha.github.io/npapaHAHA/)** · 1 минута
+
+Егор · ИТМО · прикладной ML и бэкенд
 
 ## Проекты
 
