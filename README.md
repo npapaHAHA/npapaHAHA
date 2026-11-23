@@ -1,21 +1,41 @@
-# Привет, я Егор
+<p align="center">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/npapaHAHA/npapaHAHA/main/assets/profile/masthead-dark.png">
+    <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/npapaHAHA/npapaHAHA/main/assets/profile/masthead-light.png">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/npapaHAHA/npapaHAHA/main/assets/profile/masthead-dark.gif">
+    <img src="https://raw.githubusercontent.com/npapaHAHA/npapaHAHA/main/assets/profile/masthead-light.gif" width="100%" alt="Егор. ИТМО. Прикладной ML и бэкенд на Python, .NET и PostgreSQL. Схема Edge Rollout Lab показывает 180 устройств на пяти площадках.">
+  </picture>
+</p>
 
-**ИТМО · Прикладной ML и бэкенд**
+## Проекты
 
-Собираю ML-сервисы на Python и пишу бэкенд на .NET. Мне интересно, как модель работает на новых данных и как сервис ведёт себя при одновременных запросах.
+<p align="center">
+  <a href="https://github.com/npapaHAHA/edge-rollout-lab"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/npapaHAHA/npapaHAHA/main/assets/profile/edge-dark.png">
+    <img src="https://raw.githubusercontent.com/npapaHAHA/npapaHAHA/main/assets/profile/edge-light.png" width="320" alt="Edge Rollout Lab. Планировщик обновлений повысил среднюю полезность на 20,3% относительно FIFO на синтетическом парке.">
+  </picture></a>
+  <a href="https://github.com/npapaHAHA/SlotGuard"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/npapaHAHA/npapaHAHA/main/assets/profile/slotguard-dark.png">
+    <img src="https://raw.githubusercontent.com/npapaHAHA/npapaHAHA/main/assets/profile/slotguard-light.png" width="320" alt="SlotGuard. Календарь ресурсов на .NET и PostgreSQL. В тесте 20 параллельных запросов на один слот дают одну бронь.">
+  </picture></a>
+</p>
+<p align="center">
+  <a href="https://github.com/npapaHAHA/support-intent-classifier"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/npapaHAHA/npapaHAHA/main/assets/profile/support-dark.png">
+    <img src="https://raw.githubusercontent.com/npapaHAHA/npapaHAHA/main/assets/profile/support-light.png" width="320" alt="Support Intent Classifier. 77 тем банковских обращений, 0,909 macro-F1 на тестовой выборке BANKING77.">
+  </picture></a>
+  <a href="https://github.com/npapaHAHA/repeat-purchase-ml"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/npapaHAHA/npapaHAHA/main/assets/profile/retail-dark.png">
+    <img src="https://raw.githubusercontent.com/npapaHAHA/npapaHAHA/main/assets/profile/retail-light.png" width="320" alt="Repeat Purchase ML. Прогноз повторной покупки на 30 дней, 0,631 Average Precision на тесте с разбиением по времени.">
+  </picture></a>
+</p>
 
-## Edge Rollout Lab
+<details>
+<summary>Как получены результаты</summary>
 
-Симулятор парка edge-устройств. Сравниваю модели классификации инцидентов и планирую, как доставлять обновления при ограниченной пропускной способности сети.
+- **Edge Rollout Lab.** Сравнение с FIFO по суммарной полезности за 36 дней. Среднее пяти прогонов на синтетических данных. [Бенчмарк](https://github.com/npapaHAHA/edge-rollout-lab#benchmark-results)
+- **SlotGuard.** Интеграционный тест параллельного бронирования. Один ответ HTTP 201 и 19 ответов HTTP 409. [Локальное демо](https://github.com/npapaHAHA/SlotGuard#быстрый-запуск)
+- **Support Intent Classifier.** TF-IDF + LinearSVC на 3 071 отложенном обращении. [Отчёт об оценке](https://github.com/npapaHAHA/support-intent-classifier/blob/main/metrics.json)
+- **Repeat Purchase ML.** Признаки в SQL за 90 дней, модель CatBoost и тест на более поздних данных. [Отчёт об оценке](https://github.com/npapaHAHA/repeat-purchase-ml/blob/main/metrics.json)
 
-На синтетическом парке из **180 устройств** планировщик с учётом лимитов трафика показал **на 20,3% больше суммарной полезности**, чем FIFO, в среднем за пять прогонов.
-
-[Код и запуск](https://github.com/npapaHAHA/edge-rollout-lab) · [Результаты бенчмарка](https://github.com/npapaHAHA/edge-rollout-lab#benchmark-results)
-
-[![Бенчмарк Edge Rollout Lab. Слева сравнение классификаторов на новых площадках, справа сравнение стратегий раскатки.](https://raw.githubusercontent.com/npapaHAHA/edge-rollout-lab/main/reports/benchmark.png)](https://github.com/npapaHAHA/edge-rollout-lab#benchmark-results)
-
-## Другие проекты
-
-- **[SlotGuard](https://github.com/npapaHAHA/SlotGuard)** — календарь для бронирования помещений и оборудования на ASP.NET Core и PostgreSQL. Интеграционный тест проверяет, что из **20 одновременных запросов** на один слот проходит ровно один. [Скриншот календаря](https://github.com/npapaHAHA/SlotGuard/blob/main/docs/screenshots/calendar.png)
-- **[Support Intent Classifier](https://github.com/npapaHAHA/support-intent-classifier)** — FastAPI-сервис, который определяет одну из **77 тем** банковского обращения. Модель TF-IDF + LinearSVC получила **0,909 macro-F1** на тестовой выборке BANKING77.
-- **[Repeat Purchase ML](https://github.com/npapaHAHA/repeat-purchase-ml)** — прогноз повторной покупки на ближайшие 30 дней. Считаю признаки в SQL и проверяю CatBoost на более поздних данных.
+</details>
